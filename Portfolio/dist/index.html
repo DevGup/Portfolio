@@ -15,7 +15,6 @@
     <a class="brand" href="#top">Dev Gupta</a>
     <nav class="main-nav" aria-label="Main navigation">
       <a href="#about">About</a>
-      <a class="mark" href="#top" aria-label="Dev Gupta, home" aria-hidden="false"><span></span><span></span><span></span></a>
       <a class="selected" href="#work">Work</a>
     </nav>
     <div class="header-links">
@@ -24,20 +23,22 @@
     </div>
   </header>
 
-  <nav class="index" aria-label="Project index">
-    <a href="#jobs"><span></span>Job processing</a>
-    <a href="#banking"><span></span>Banking</a>
-    <a href="#telecom"><span></span>Telecom</a>
+  <nav class="index" aria-label="Journey chapters">
+    <p class="index-title" aria-hidden="true">Chapters</p>
+    <a href="#about"><span aria-hidden="true"></span>Intro</a>
+    <a href="#jobs"><span aria-hidden="true"></span>Job processing</a>
+    <a href="#banking"><span aria-hidden="true"></span>Banking</a>
+    <a href="#telecom"><span aria-hidden="true"></span>Telecom</a>
   </nav>
 
   <main id="main">
     <section id="about" class="hero frame" aria-labelledby="intro">
       <div class="hero-copy">
-        <p class="label">About</p>
+        <p class="label">Engineering journey</p>
         <h1 id="intro">Building systems<br> <em>for the real world.</em></h1>
         <div class="hero-foot">
           <p>I’m Dev Gupta. I build Java and Kafka services, work with client teams, and follow systems into production. I’m looking for a Forward Deployed Engineer role where I can do all three.</p>
-          <a class="next" href="#work">Explore work <span aria-hidden="true">↓</span></a>
+          <a class="next" href="#jobs">Explore work <span aria-hidden="true">↓</span></a>
         </div>
       </div>
       <figure class="hero-model">
@@ -48,12 +49,11 @@
 
     <section id="work" class="work frame" aria-label="Selected work">
       <article class="case" id="jobs" aria-labelledby="jobs-title">
-        <div class="case-info">
-          <div><p class="label">Personal project</p><h2 id="jobs-title">Distributed job processing</h2><a class="pill" href="https://github.com/DevGup/job-processing-system">View source <span aria-hidden="true">↗</span></a></div>
-          <div><h3>Challenge</h3><p>Keep jobs moving when a worker fails or a message arrives twice or out of order.</p></div>
-          <div><h3>Stack</h3><ul class="tags"><li>Java 21</li><li>Spring Boot</li><li>Kafka</li><li>MySQL</li><li>AWS</li></ul></div>
-          <div><h3>My approach</h3><p>Use idempotent processing, a dead-letter queue, and retries with exponential backoff. Track the pipeline in Prometheus and Grafana.</p></div>
-        </div>
+        <header class="case-title">
+          <p class="label">Personal project</p>
+          <h2 id="jobs-title">Distributed job processing</h2>
+          <a class="pill" href="https://github.com/DevGup/job-processing-system">View source <span aria-hidden="true">↗</span></a>
+        </header>
         <figure class="art pipeline" aria-labelledby="pipeline-title">
           <div class="art-head">
             <figcaption id="pipeline-title">Job processing · Interactive model</figcaption>
@@ -69,37 +69,50 @@
           </div>
           <p class="art-status" id="pipeline-status" role="status">The API queues jobs in Kafka. A worker consumes each job.</p>
         </figure>
+        <div class="case-info">
+          <div><h3>Challenge</h3><p>Keep jobs moving when a worker fails or a message arrives twice or out of order.</p></div>
+          <div><h3>My approach</h3><p>Use idempotent processing, a dead-letter queue, and retries with exponential backoff. Track the pipeline in Prometheus and Grafana.</p></div>
+          <div><h3>Stack</h3><ul class="tags"><li>Java 21</li><li>Spring Boot</li><li>Kafka</li><li>MySQL</li><li>AWS</li></ul></div>
+        </div>
       </article>
 
       <article class="case" id="banking" aria-labelledby="banking-title">
-        <div class="case-info">
-          <div><p class="label">LTIMindtree · Citi engagement</p><h2 id="banking-title">Core banking reliability</h2><p class="tenure">Jun 2024 – Present</p></div>
-          <div><h3>Challenge</h3><p>Recurring SLA failures across 500+ Autosys jobs and slow queries in core banking workflows.</p></div>
-          <div><h3>Stack</h3><ul class="tags"><li>Kafka</li><li>SQL</li><li>Redis</li><li>Autosys</li></ul></div>
-          <div><h3>My approach</h3><p>Tuned Kafka and batch schedules, indexed database queries, and added Redis caching. I also automated recurring production diagnostics with Python and Korn Shell.</p></div>
-        </div>
+        <header class="case-title">
+          <p class="label">LTIMindtree · Citi engagement</p>
+          <h2 id="banking-title">Core banking reliability</h2>
+          <p class="tenure">Jun 2024 – Present</p>
+        </header>
         <figure class="art banking" aria-labelledby="bank-art">
           <figcaption class="art-label" id="bank-art">Batch completion · Eastern Standard Time</figcaption>
           <div class="clock" aria-hidden="true"><span class="clock-hand"></span></div>
           <div class="metric" aria-label="Batch completion moved from 6 a.m. to 3 a.m."><span>06:00</span><b aria-hidden="true">→</b><strong>03:00</strong></div>
           <p class="art-status">Core banking queries also dropped from five minutes to two.</p>
         </figure>
+        <div class="case-info">
+          <div><h3>Challenge</h3><p>Recurring SLA failures across 500+ Autosys jobs and slow queries in core banking workflows.</p></div>
+          <div><h3>My approach</h3><p>Tuned Kafka and batch schedules, indexed database queries, and added Redis caching. I also automated recurring production diagnostics with Python and Korn Shell.</p></div>
+          <div><h3>Stack</h3><ul class="tags"><li>Kafka</li><li>SQL</li><li>Redis</li><li>Autosys</li></ul></div>
+        </div>
       </article>
 
       <article class="case" id="telecom" aria-labelledby="telecom-title">
-        <div class="case-info">
-          <div><p class="label">Jio Platforms</p><h2 id="telecom-title">Telecom configuration</h2><p class="tenure">Oct 2023 – Jun 2024</p></div>
-          <div><h3>Challenge</h3><p>Each vendor request required validating data and updating set-top box configurations for regional requirements.</p></div>
-          <div><h3>Stack</h3><ul class="tags"><li>Python</li><li>Linux</li></ul></div>
-          <div><h3>My approach</h3><p>Worked with Verimetrics on regional configurations and automated vendor validation. Monitored eight Linux servers during high-traffic IPL periods.</p></div>
-        </div>
+        <header class="case-title">
+          <p class="label">Jio Platforms</p>
+          <h2 id="telecom-title">Telecom configuration</h2>
+          <p class="tenure">Oct 2023 – Jun 2024</p>
+        </header>
         <figure class="art telecom" aria-labelledby="telecom-art">
           <figcaption class="art-label" id="telecom-art">Set-top box updates · Time per request</figcaption>
           <div class="comparison">
-            <div><span>Before automation</span><div class="bar"><strong>3 hours</strong></div></div>
-            <div><span>With automation</span><div class="bar short"><strong>30 min</strong></div></div>
+            <div><p><span>Before automation</span><strong>3 hours</strong></p><div class="bar" aria-hidden="true"></div></div>
+            <div><p><span>With automation</span><strong>30 min</strong></p><div class="bar short" aria-hidden="true"></div></div>
           </div>
         </figure>
+        <div class="case-info">
+          <div><h3>Challenge</h3><p>Each vendor request required validating data and updating set-top box configurations for regional requirements.</p></div>
+          <div><h3>My approach</h3><p>Worked with Verimetrics on regional configurations and automated vendor validation. Monitored eight Linux servers during high-traffic IPL periods.</p></div>
+          <div><h3>Stack</h3><ul class="tags"><li>Python</li><li>Linux</li></ul></div>
+        </div>
       </article>
     </section>
 

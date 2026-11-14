@@ -3,7 +3,8 @@
   const projects = projectLinks.map(link => document.querySelector(link.hash));
 
   function updateIndex() {
-    const marker = Math.min(230, window.innerHeight * 0.4);
+    const stickyOffset = parseFloat(getComputedStyle(projects[0]).scrollMarginTop);
+    const marker = stickyOffset + 24;
     const active = projects.findIndex(project => {
       const bounds = project.getBoundingClientRect();
       return bounds.top <= marker && bounds.bottom > marker;
